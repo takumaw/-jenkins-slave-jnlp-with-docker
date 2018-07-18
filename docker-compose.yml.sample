@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jenkins:
+    build: .
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+      - JENKINS_URL=...
+      - JENKINS_AGENT_NAME=...
+      - JENKINS_SECRET=...
