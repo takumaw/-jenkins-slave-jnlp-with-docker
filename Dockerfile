@@ -15,6 +15,6 @@ RUN set -ex \
 	&& usermod -a -G docker jenkins
 
 COPY supervisor/conf.d/docker.conf /etc/supervisor/conf.d/docker.conf
-COPY supervisor/conf.d/jenkins-slave.conf /etc/supervisor/conf.d/jenkins.conf
+COPY supervisor/conf.d/jenkins-slave.conf /etc/supervisor/conf.d/jenkins-slave.conf
 
 ENTRYPOINT ["/usr/bin/supervisord", "--nodaemon"]
