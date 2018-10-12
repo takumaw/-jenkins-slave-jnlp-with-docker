@@ -1,6 +1,7 @@
 FROM jenkins/jnlp-slave:latest
 
 USER root
+WORKDIR /
 
 RUN set -ex \
 	&& apt-get update && apt-get install -y --no-install-recommends \
