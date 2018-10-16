@@ -17,4 +17,6 @@ RUN set -ex \
 COPY supervisor/conf.d/docker.conf /etc/supervisor/conf.d/docker.conf
 COPY supervisor/conf.d/jenkins-slave.conf /etc/supervisor/conf.d/jenkins-slave.conf
 
+VOLUME /home/jenkins/agent
+
 ENTRYPOINT ["/usr/bin/supervisord", "--nodaemon"]
