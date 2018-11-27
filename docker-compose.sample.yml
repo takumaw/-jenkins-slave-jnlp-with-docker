@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins-slave:
+    build: .
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - JENKINS_URL=
+      - JENKINS_SECRET=
+      - JENKINS_AGENT_NAME=
+      - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+    volumes:
+      - ./jenkins_home:/home/jenkins/agent
+      #- ./docker:/var/lib/docker
+      #- ./daemon.json:/etc/docker/daemon.json:ro
