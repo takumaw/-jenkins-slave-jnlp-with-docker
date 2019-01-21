@@ -1,6 +1,7 @@
 FROM jenkins/jnlp-slave:latest
 
 USER root
+ENV HOME /root
 WORKDIR /
 
 RUN set -ex \
